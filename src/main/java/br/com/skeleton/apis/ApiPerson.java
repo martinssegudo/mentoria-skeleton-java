@@ -1,12 +1,13 @@
 package br.com.skeleton.apis;
 
+import br.com.skeleton.apis.entities.response.PersonResponse;
 import org.springframework.http.ResponseEntity;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
-public interface ApiExemplo {
+public interface ApiPerson {
 	
 	@ApiOperation(value = "Salva um valor")
 	@ApiResponses(value = {
@@ -14,6 +15,6 @@ public interface ApiExemplo {
 	    @ApiResponse(code = 403, message = "Você não tem permissão para acessar este recurso"),
 	    @ApiResponse(code = 500, message = "Retornara uma mensagem amigável para o usuária"),
 	})	
-	ResponseEntity<String> save(String savedValue);
+	ResponseEntity<PersonResponse> save(Long id);
 
 }
